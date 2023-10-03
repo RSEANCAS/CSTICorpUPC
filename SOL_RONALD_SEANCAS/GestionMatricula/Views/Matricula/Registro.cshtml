@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Registro de Matrícula";
+}
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card card-dark">
+        <div class="card-header">
+            <h3 class="card-title">Filtros</h3>
+        </div>
+        <div class="card-body">
+            <form id="frm-registro">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Alumno</label>
+                            <select id="cmb-alumno" name="alumno" class="form-control" style="width:100%"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Tipo Matrícula</label>
+                            <select id="cmb-tipomatricula" name="tipomatricula" class="form-control" style="width: 100%"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Curso</label>
+                            <select id="cmb-curso" name="curso" class="form-control" style="width: 100%"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Sección</label>
+                            <select id="cmb-seccion" name="seccion" class="form-control" style="width: 100%"></select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn-buscar" type="submit" form="frm-registro" class="btn btn-sm btn-dark">
+                        <i class="fa fa-save"></i>
+                        &nbsp;
+                        GUARDAR
+                    </button>
+                    <a href="@Url.Content("~/matricula")" class="btn btn-sm btn-danger">
+                        <i class="fa fa-undo-alt"></i>
+                        &nbsp;
+                        REGRESAR
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->
+
+@section links{
+    <!-- Select2 -->
+    <link rel="stylesheet" href="@Url.Content("~/assets/plugins/select2/css/select2.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")">
+}
+
+@section scrips{
+    <!-- Select2 -->
+    <script src="@Url.Content("~/assets/plugins/select2/js/select2.full.min.js")"></script>
+    <!-- jquery-validation -->
+    <script src="@Url.Content("~/assets/plugins/jquery-validation/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/jquery-validation/additional-methods.min.js")"></script>
+
+    <script src="@Url.Content("~/assets/dist/js/pages/matricula-registro.js")"></script>
+    <script>
+        $(function () {
+            init();
+        });
+    </script>
+}

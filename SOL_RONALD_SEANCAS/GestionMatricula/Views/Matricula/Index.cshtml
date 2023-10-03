@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Matrícula";
+}
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card card-dark">
+        <div class="card-header">
+            <h3 class="card-title">Filtros</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nombres del Alumno</label>
+                        <input type="text" id="txt-filtro-nombresalumno" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn-buscar" class="btn btn-sm btn-dark">
+                        <i class="fa fa-search"></i>
+                        &nbsp;
+                        BUSCAR
+                    </button>
+                    <a href="@Url.Content("~/matricula/registro")" class="btn btn-sm btn-outline-dark">
+                        <i class="fa fa-file"></i>
+                        &nbsp;
+                        REGISTRAR
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+    <!-- Default box -->
+    <div class="card card-dark">
+        <div class="card-header">
+            <h3 class="card-title">Resultados</h3>
+        </div>
+        <div class="card-body">
+            <table id="tbl-lista" class="table table-bordered table-hover table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID MATRICULA</th>
+                        <th>CÓDIGO ALUMNO</th>
+                        <th>NOMBRES</th>
+                        <th>APELLIDOS</th>
+                        <th>ID CURSO</th>
+                        <th>DESCRIPCIÓN DE CURSO</th>
+                        <th>CRÉDITOS</th>
+                        <th>NOMBRE SECCIÓN</th>
+                        <th>TIPO MATRÍCULA</th>
+                        <th>FECHA MATRÍCULA</th>
+                        <th>FECHA ANULACIÓN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot class="thead-dark">
+                    <tr>
+                        <th>ID MATRICULA</th>
+                        <th>CÓDIGO ALUMNO</th>
+                        <th>NOMBRES</th>
+                        <th>APELLIDOS</th>
+                        <th>ID CURSO</th>
+                        <th>DESCRIPCIÓN DE CURSO</th>
+                        <th>CRÉDITOS</th>
+                        <th>NOMBRE SECCIÓN</th>
+                        <th>TIPO MATRÍCULA</th>
+                        <th>FECHA MATRÍCULA</th>
+                        <th>FECHA ANULACIÓN</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->
+
+@section scrips{
+    <script src="@Url.Content("~/assets/plugins/moment/moment.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js")"></script>
+    <script src="@Url.Content("~/assets/dist/js/pages/matricula.js")"></script>
+    <script>
+        $(function () {
+            init();
+        });
+    </script>
+}
